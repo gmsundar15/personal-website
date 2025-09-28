@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-why-rust-isn-t-ready-for-engineering-software-yet",
+        },{id: "post-london-through-my-lens",
+        
+          title: "London through my lens",
+        
+        description: "My photoadventures in London in 2025",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/London-through-my-lens/";
+          
+        },
+      },{id: "post-why-rust-isn-t-ready-for-engineering-software-yet",
         
           title: "Why Rust Isn’t Ready for Engineering Software (Yet)",
         
