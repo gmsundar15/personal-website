@@ -1,4 +1,3 @@
-
 /* Create mermaid diagram as another node and hide the code block, appending the mermaid node after it
     this is done to enable retrieving the code again when changing theme between light/dark */
 document.addEventListener("readystatechange", () => {
@@ -16,7 +15,7 @@ document.addEventListener("readystatechange", () => {
     });
 
     // inside mermaid-setup.js
-    initMermaid()
+    initMermaid();
 
     /* Zoomable mermaid diagrams */
     if (typeof d3 !== "undefined") {

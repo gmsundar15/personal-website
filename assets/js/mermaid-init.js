@@ -38,4 +38,3 @@ const computedTheme = determineComputedTheme(); // "dark" | "light"
 window.matchMedia(computedTheme).addEventListener("change", () => {
   initMermaid();
 });
-
