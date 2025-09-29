@@ -25,7 +25,7 @@ I’m easily drawn to anything that offers an opportunity to learn. Whether it�
 
 How I learn changes all the time. Some days it’s documentaries or podcasts. Other days, it’s books or endless Wikipedia spirals. Whatever the medium, the goal is the same: to better understand myself and the world around me.
 
-## I Make Photos
+## I Make [Photos](/blog/category/photgraphy/)
 
 Photography is one of the ways I connect with the world. When I’m behind the camera—whether capturing nature, people, or everyday objects—I try to see things more clearly, more intimately.
 

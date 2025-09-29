@@ -39,3 +39,9 @@ images:
         <img src="/assets/img/galleries/20250929/thumbs/PC140075.jpg" />
     </a>
 </div>
+<div class="gallery-license" style="margin-top:1.5em; font-size:0.9em; text-align:center; opacity:0.8;">
+  📷 Photos © {{ page.date | date: "%Y" }} {{ site.first_name }} {{ site.last_name }} – Licensed under
+  <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+    CC BY-NC 4.0
+  </a>
+</div>
