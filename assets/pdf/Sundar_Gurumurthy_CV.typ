@@ -49,7 +49,7 @@
 
 #show link: it => [
   #set text(link-color)
-  #text(it.body)
+  #underline(it)
 ]
 
 #let icon(path, replace: "#000000", size: 10pt, color: link-color) = {
