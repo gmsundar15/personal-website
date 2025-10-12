@@ -69,7 +69,7 @@
   #link("tel:+447442278370")[#phone-image (+44) 7442278370] •
   #link("https://sundar.guru")[#web-image Personal Website] •
   #link("https://linkedin.com/in/sundar-guru")[#linkedin-image LinkedIn] •
-  #link("https://github.com/divergentrain")[#github-image GitHub]
+  #link("https://github.com/neuroconvergent")[#github-image GitHub]
 ]
 
 = Professional Summary
