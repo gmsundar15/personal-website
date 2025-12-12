@@ -21,13 +21,14 @@ installed in my living room to match the abstract art painted on one of its
 walls. Initially, I was distracted by the standard tools for the job, digital
 art tools such as [Krita](https://krita.org/) or
 [INKSCAPE](https://inkscape.org). But frustrated by the amount of time needed to
-learn digital art as someone with no experience, I had a flash of inspiration:
+learn digital art as someone with no experience, I was motivated to think
+outside the box. And then I had a flash of inspiration:
 the python library `plotly` is capable of generating SVG files and an abstract
 triangular pattern is nothing more than a randomly seeded triangular mesh.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/wall.jpg" title="Wall" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/glass-design/wall.jpg" title="Wall" width=400 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
     </div>
 </div>
 <div class="caption">
@@ -128,7 +129,7 @@ covered.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/triangulation.png" title="Delaunay triangulation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/glass-design/triangulation.png" title="Delaunay triangulation" width=600 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
     </div>
 </div>
 <div class="caption">
@@ -141,8 +142,9 @@ very natural looking edges as `plotly` does not clip the triangles and generates
 a clean edge.
 
 ```python
-_ = fig.update_xaxes(range=[0.1,0.9])
-_ = fig.update_yaxes(range=[0.1,0.9])
+# For example, change the image domain to:
+_ = fig.update_xaxes(range=[0.33,0.66])
+_ = fig.update_yaxes(range=[0.33,0.66])
 ```
 
 ### Colour Clumping
@@ -153,7 +155,7 @@ colour which can lead to _clumps_ of the same colour forming.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/triangulation_crop.png" title="Delaunay triangulation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/glass-design/triangulation_crop.png" title="Colour clumping" width=400 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
     </div>
 </div>
 <div class="caption">
@@ -213,7 +215,7 @@ not visually pleasing.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/triangulation_poisson.png" title="Delaunay triangulation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/glass-design/triangulation_poisson.png" title="Uneven point sampling" width=400 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
     </div>
 </div>
 <div class="caption">
@@ -238,10 +240,13 @@ modular, I was able to generate a set of images and picked the ones that I
 liked. The full code is available on [GitHub](https://github.com/neuroconvergent/py-art/).
 
 <swiper-container class="glass-swiper" keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-type="fraction" rewind="true">
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_3.png" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_5.png" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_7.png" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_3.png" title="triangular_pattern_3" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_5.png" title="triangular_pattern_5" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_7.png" title="triangular_pattern_7" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
 </swiper-container>
+<div class="caption">
+    Generated triangular patterns using the final script. 
+</div>
 
 This project reminded me that the numerical tools we use in engineering and
 simulation are often directly applicable to creative expression. The boundary
