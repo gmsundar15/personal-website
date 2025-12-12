@@ -3,7 +3,7 @@ layout: post
 title: What I do & why
 date: 2025-06-21 00:00:00 +0000
 description: A longer introduction about me for those who have the time.
-tags: life, philosophy
+tags: life philosophy
 categories: self
 toc:
   sidebar: left

@@ -4,7 +4,7 @@ title: London through my lens (2025)
 date: 2025-09-28 18:05:15 +0100
 description: My photoadventures in London in 2025.
 tags: photo-diary
-categories: Photgraphy, 2025
+categories: Photgraphy 2025
 thumbnail: /assets/img/galleries/20250929/P1010154.jpg
 images:
   spotlight: true
