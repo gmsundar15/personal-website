@@ -926,6 +926,7 @@ pre {
     border-radius: 0;
     margin-bottom: 0;
     padding: 0;
+    white-space: inherit;
   }
 }
 
@@ -1230,6 +1231,11 @@ swiper-container {
   --swiper-navigation-color: var(--global-theme-color);
   --swiper-pagination-color: var(--global-theme-color);
   --swiper-pagination-bullet-inactive-color: var(--global-text-color);
+}
+
+.glass-swiper {
+  height: 650px;
+  --swiper-pagination-bottom: 8px;
 }
 
 .ps-root {
