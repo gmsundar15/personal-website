@@ -5,8 +5,6 @@ date: 2025-12-12 13:34:50 +0530
 description: Using scientific computing primitives to generate custom geometric art for my home.
 tags: Art Python
 categories: Programming Art 2025
-toc:
-  sidebar: left
 images:
   slider: true
 ---
@@ -25,6 +23,7 @@ art tools such as [Krita](https://krita.org/) or
 learn digital art as someone with no experience, I had a flash of inspiration:
 the python library `plotly` is capable of generating SVG files and an abstract
 triangular pattern is nothing more than a randomly seeded triangular mesh.
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/glass-design/wall.jpg" title="Wall" class="img-fluid rounded z-depth-1" %}
@@ -33,7 +32,6 @@ triangular pattern is nothing more than a randomly seeded triangular mesh.
 <div class="caption">
     The pattern on my wall.
 </div>
-
 
 I have always been drawn to the idea of _Creative Programming_, having been
 introduced to it by the [creativecoding
@@ -50,7 +48,7 @@ avoiding "sliver triangle" i.e. triangles with at least one of the interior
 angles being very small. This is achieved mathematically by generating a set of
 points such that the circumcircle of any triangle does not contain any points
 other than the three points of the triangle, hence ensuring that the minimum
-interior angles of the triangles are maximised and slivers are  avoided.
+interior angles of the triangles are maximised and slivers are avoided.
 
 Delaunay triangulation is widely used in mesh generation algorithms in FEA. This
 is because the geometry of sliver triangles doesn't work very well with FEA
