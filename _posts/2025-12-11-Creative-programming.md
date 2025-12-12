@@ -3,6 +3,7 @@ layout: post
 title: Creating Generative Geometric Art in Python
 date: 2025-12-12 13:34:50 +0530
 description: Using scientific computing primitives to generate custom geometric art for my home.
+featured: true
 tags: Art Python
 categories: Programming Art 2025
 images:
