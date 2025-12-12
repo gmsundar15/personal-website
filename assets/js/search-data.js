@@ -37,11 +37,22 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-london-through-my-lens",
+        },{id: "post-creating-generative-geometric-art-in-python",
         
-          title: "London through my lens",
+          title: "Creating Generative Geometric Art in Python",
         
-        description: "My photoadventures in London in 2025",
+        description: "Using scientific computing primitives to generate custom geometric art for my home.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Creative-programming/";
+          
+        },
+      },{id: "post-london-through-my-lens-2025",
+        
+          title: "London through my lens (2025)",
+        
+        description: "My photoadventures in London in 2025.",
         section: "Posts",
         handler: () => {
           
@@ -63,7 +74,7 @@ ninja.data = [{
         
           title: "What I do &amp; why",
         
-        description: "A longer introduction about myself for those who have the time",
+        description: "A longer introduction about me for those who have the time.",
         section: "Posts",
         handler: () => {
           
