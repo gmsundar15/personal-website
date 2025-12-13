@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-creating-generative-geometric-art-in-python",
+        },{id: "post-photo-escapades-in-malaysia",
+        
+          title: "Photo Escapades in Malaysia",
+        
+        description: "A glimpse into my photography adventures in Malaysia.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Malaysia-Photography/";
+          
+        },
+      },{id: "post-creating-generative-geometric-art-in-python",
         
           title: "Creating Generative Geometric Art in Python",
         
