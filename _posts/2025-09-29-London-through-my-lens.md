@@ -3,7 +3,7 @@ layout: post
 title: London through my lens (2025)
 date: 2025-09-28 18:05:15 +0100
 description: My photoadventures in London in 2025.
-tags: street-photography 
+tags: street-photography
 categories: photography 2025
 thumbnail: /assets/img/galleries/20250929/P1010144-2.jpg
 images:
