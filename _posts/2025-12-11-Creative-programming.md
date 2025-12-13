@@ -3,11 +3,12 @@ layout: post
 title: Creating Generative Geometric Art in Python
 date: 2025-12-12 13:34:50 +0530
 description: Using scientific computing primitives to generate custom geometric art for my home.
-featured: true
-tags: Art Python
-categories: Programming Art 2025
+tags: scientific-computing art python
+categories: programming art 2025
 images:
   slider: true
+toc:
+  begining: true
 ---
 
 ## The Challenge
@@ -28,7 +29,9 @@ triangular pattern is nothing more than a randomly seeded triangular mesh.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/wall.jpg" title="Wall" width=400 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
+        {% include figure.liquid path="assets/img/glass-design/wall.jpg"
+        title="Wall" width=400 class="img-fluid rounded z-depth-1 d-block
+        mx-auto" %}
     </div>
 </div>
 <div class="caption">
@@ -40,6 +43,8 @@ introduced to it by the [creativecoding
 subreddit](https://www.reddit.com/r/creativecoding/). This was the perfect
 opportunity to try my hand it, without falling into the rabbit hole of exploring
 mathematics and computer science way beyond what I already know.
+
+---
 
 ## The Solution
 
@@ -67,7 +72,10 @@ rectangles, so the triangles are drawn using scatter traces as suggested in
 with the hex representation of the 4 colours on my wall, taken from the website
 of the paint manufacturer.
 
-```python
+<details class="custom-details">
+<summary class="custom-summary"><b>Simple Delaunay Triangulation
+Implementation</b></summary>
+{% highlight python linenos %}
 import numpy as np
 from scipy.spatial import Delaunay
 import plotly.graph_objects as go
@@ -118,9 +126,11 @@ def main():
     fig.write_image("triangulation.svg")
     fig.write_image("triangulation.png")
 
-if __name__ == "__main__":
-    main()
-```
+if **name** == "**main**":
+main()
+{% endhighlight %}
+
+</details>
 
 This creates a simple Delaunay triangulation over the 2D space and colours them
 randomly. However, as seen in the following image, the points are generated
@@ -129,7 +139,10 @@ covered.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/triangulation.png" title="Delaunay triangulation" width=600 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
+        {% include figure.liquid
+        path="assets/img/glass-design/triangulation.png" title="Delaunay
+        triangulation" width=600 class="img-fluid rounded z-depth-1 d-block
+        mx-auto" %}
     </div>
 </div>
 <div class="caption">
@@ -147,6 +160,8 @@ _ = fig.update_xaxes(range=[0.33,0.66])
 _ = fig.update_yaxes(range=[0.33,0.66])
 ```
 
+---
+
 ### Colour Clumping
 
 A not so simple issue to solve is colour clumping which might occur through
@@ -155,7 +170,10 @@ colour which can lead to _clumps_ of the same colour forming.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/triangulation_crop.png" title="Colour clumping" width=400 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
+        {% include figure.liquid
+        path="assets/img/glass-design/triangulation_crop.png" title="Colour
+        clumping" width=400 class="img-fluid rounded z-depth-1 d-block mx-auto"
+        %}
     </div>
 </div>
 <div class="caption">
@@ -171,27 +189,32 @@ marked as neighbours, else the edge is just added to the map for future
 comparisons. Once the adjacency matrix is created, we can just ensure that a
 triangle is never allotted the same colour as its adjacent triangles.
 
-```python
+<details class="custom-details">
+<summary><b>Anti-Clumping Implementation</b></summary>
+<br>
+{% highlight python %}
+palette = ["#fece8b", "#b49370", "#95CC84", "#f7b4c3"]
 triangle_colours = [None] * len(tri.simplices)
 adj = [[] for _ in tri.simplices]
 edges = {}
 
 for i, s in enumerate(tri.simplices):
-    for a, b in [(s[0], s[1]), (s[1], s[2]), (s[2], s[0])]:
-        key = tuple(sorted((a, b)))
-        if key in edges:
-            j = edges[key]
-            adj[i].append(j)
-            adj[j].append(i)
-        else:
-            edges[key] = i
+for a, b in [(s[0], s[1]), (s[1], s[2]), (s[2], s[0])]:
+key = tuple(sorted((a, b)))
+if key in edges:
+j = edges[key]
+adj[i].append(j)
+adj[j].append(i)
+else:
+edges[key] = i
 
 # Assign colours with anti-clumping
+
 for i in range(len(tri.simplices)):
-    neighbors = adj[i]
-    disallowed = {
-        triangle_colours[n] for n in neighbors if triangle_colours[n] is not None
-    }
+neighbors = adj[i]
+disallowed = {
+triangle_colours[n] for n in neighbors if triangle_colours[n] is not None
+}
 
     # Retry random colours until one fits
     for _ in range(10):
@@ -202,10 +225,15 @@ for i in range(len(tri.simplices)):
     else:
         # fallback
         triangle_colours[i] = np.random.choice(palette)
-```
+
+{% endhighlight %}
 
 As a good practice, this algorithm has a fallback but with a 4 colour palette,
 this should never happen as a triangle can only have 3 neighbours.
+
+</details>
+
+---
 
 ### Poisson-Disc Sampling
 
@@ -215,7 +243,10 @@ not visually pleasing.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/glass-design/triangulation_poisson.png" title="Uneven point sampling" width=400 class="img-fluid rounded z-depth-1 d-block mx-auto" %}
+        {% include figure.liquid
+        path="assets/img/glass-design/triangulation_poisson.png" title="Uneven
+        point sampling" width=400 class="img-fluid rounded z-depth-1 d-block
+        mx-auto" %}
     </div>
 </div>
 <div class="caption">
@@ -233,6 +264,86 @@ doesn't work with recent versions of `numpy`. Hence, I ended up creating a very
 [simple implementation of the algorithm
 myself](https://github.com/neuroconvergent/py-art/blob/5c23018444db525c7bc1921506d4194ddbfa1e8b/main.py#L20).
 
+<details class="custom-details">
+<summary><b>Poisson-Disc Sampling Implementation</b></summary>
+<br>
+{% highlight python %}
+
+def poisson_disc_samples(width, height, r, k=30):
+"""
+Bridson's Poisson-disc sampling algorithm.
+
+    width, height : sampling area
+    r             : minimum distance between samples
+    k             : number of candidate attempts per active point
+    """
+    cell_size = r / np.sqrt(2)
+    grid_width = int(np.ceil(width / cell_size))
+    grid_height = int(np.ceil(height / cell_size))
+
+    # Grid to store sample indices (-1 means empty)
+    grid = -np.ones((grid_height, grid_width), dtype=int)
+
+    samples = []
+    active = []
+
+    # Start with a random point
+    p = np.array([np.random.uniform(0, width), np.random.uniform(0, height)])
+    samples.append(p)
+    active.append(0)
+
+    gx = int(p[0] // cell_size)
+    gy = int(p[1] // cell_size)
+    grid[gy, gx] = 0
+
+    while active:
+        idx = np.random.choice(active)
+        base = samples[idx]
+        found = False
+
+        # Try k random points around `base`
+        for _ in range(k):
+            theta = np.random.uniform(0, 2 * np.pi)
+            rad = np.random.uniform(r, 2 * r)
+            candidate = base + rad * np.array([np.cos(theta), np.sin(theta)])
+
+            # Discard if outside the domain
+            if not (0 <= candidate[0] < width and 0 <= candidate[1] < height):
+                continue
+
+            # Check neighbouring cells for conflicts
+            cgx = int(candidate[0] // cell_size)
+            cgy = int(candidate[1] // cell_size)
+
+            ok = True
+            for yy in range(max(0, cgy - 2), min(grid_height, cgy + 3)):
+                for xx in range(max(0, cgx - 2), min(grid_width, cgx + 3)):
+                    si = grid[yy, xx]
+                    if si != -1:
+                        if np.linalg.norm(samples[si] - candidate) < r:
+                            ok = False
+                            break
+                if not ok:
+                    break
+
+            if ok:
+                samples.append(candidate)
+                active.append(len(samples) - 1)
+                grid[cgy, cgx] = len(samples) - 1
+                found = True
+                break
+
+        if not found:
+            active.remove(idx)
+
+    return np.array(samples)
+
+{% endhighlight %}
+
+</details>
+
+---
+
 ## The Results
 
 After putting everything together and refactoring the code to make it more
@@ -240,9 +351,24 @@ modular, I was able to generate a set of images and picked the ones that I
 liked. The full code is available on [GitHub](https://github.com/neuroconvergent/py-art/).
 
 <swiper-container class="glass-swiper" keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-type="fraction" rewind="true">
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_3.png" title="triangular_pattern_3" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_5.png" title="triangular_pattern_5" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/glass-design/triangular_pattern_7.png" title="triangular_pattern_7" width=200 class="img-fluid rounded z-depth-1 d-block mx-auto" %}</swiper-slide>
+  <swiper-slide>
+  {% include figure.liquid loading="eager"
+  path="assets/img/glass-design/triangular_pattern_3.png"
+  title="triangular_pattern_3" width=200 class="img-fluid rounded z-depth-1
+  d-block mx-auto" %}
+  </swiper-slide>
+  <swiper-slide>
+  {% include figure.liquid loading="eager"
+  path="assets/img/glass-design/triangular_pattern_5.png"
+  title="triangular_pattern_5" width=200 class="img-fluid rounded z-depth-1
+  d-block mx-auto" %}
+  </swiper-slide>
+  <swiper-slide>
+  {% include figure.liquid loading="eager"
+  path="assets/img/glass-design/triangular_pattern_7.png"
+  title="triangular_pattern_7" width=200 class="img-fluid rounded z-depth-1
+  d-block mx-auto" %}
+  </swiper-slide>
 </swiper-container>
 <div class="caption">
     Generated triangular patterns using the final script. 

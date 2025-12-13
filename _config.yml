@@ -87,7 +87,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 blog_name: Musings # blog_name will be displayed in your blog page
 blog_description: Notes on building, breaking and learning
 permalink: /blog/:year/:title/
-lsi: false # produce an index for related posts
+lsi: true # produce an index for related posts
 
 # Pagination
 pagination:
@@ -251,8 +251,8 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-    #display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-    #display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: ["scientific-computing", "philosophy"] # these tags will be displayed on the front page of your blog
+display_categories: ["photography", "programming", "2025"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
