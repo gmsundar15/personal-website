@@ -84,25 +84,25 @@ cv:
         authors: [Sundar Gurumurthy]
         date: "2019-08-02"
         url: https://www.base-search.net/Record/76e571816a3d2618dc41f6e5e604bda26a57061e95e9fb6b8cac6a70f943912f
-    Technologies:
-      - label: Simulation & Modelling
+    Skills:
+      - name: Simulation & Modelling
         icon: "fa-solid fa-atom"
-        details: Physics-based modelling, Parameterisable first-principles modelling, Data-driven surrogate models, Multi-objective optimisation, Process-window analysis
-      - label: Data Science
+        keywords: Physics-based modelling, Parameterisable first-principles modelling, Data-driven surrogate models, Multi-objective optimisation, Process-window analysis
+      - name: Data Science
         icon: "fa-solid fa-chart-pie"
-        details: Scikit-learn, PyTorch3D, Pandas, Polars, Uncertainity quantification
-      - label: Programming Languages
+        keywords: Scikit-learn, PyTorch3D, Pandas, Polars, Uncertainity quantification
+      - name: Programming Languages
         icon: "fa-solid fa-hashtag"
-        details: Python, C++, Rust, FORTRAN, BASH, MATLAB
-      - label: FEA Solvers
+        keywords: Python, C++, Rust, FORTRAN, BASH, MATLAB
+      - name: FEA Solvers
         icon: "fa-solid fa-gears"
-        details: ABAQUS, NASTRAN, LS-DYNA, ANSYS, COMSOL
-      - label: CAD Tools
+        keywords: ABAQUS, NASTRAN, LS-DYNA, ANSYS, COMSOL
+      - name: CAD Tools
         icon: "fa-solid fa-ruler"
-        details: NX/Unigraphics, CATIA V5, SolidEdge, Fusion 360
-      - label: Experimental Methods
+        keywords: NX/Unigraphics, CATIA V5, SolidEdge, Fusion 360
+      - name: Experimental Methods
         icon: "fa-solid fa-microscope"
-        details: X-Ray Diffraction, Electron Backscatter Diffraction, Laser Scanning, Thermal Imaging
+        keywords: X-Ray Diffraction, Electron Backscatter Diffraction, Laser Scanning, Thermal Imaging
     Awards:
       - title: Student Travel Award
         authors:
