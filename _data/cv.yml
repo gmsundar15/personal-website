@@ -1,189 +1,120 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.4/schema.json
+
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
-
+  name: Sundar Gurumurthy
+  location: Cranfield, UK
+  email: sundar@sundar.guru
+  phone: +44 7442 278370
+  website: https://sundar.guru
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: sundar-guru
+    - network: ORCID
+      username: 0000-0001-5388-8785
+  summary: "Computational engineer with 3+ years of hands-on experience in FEA,
+    materials modeling, and design for manufacturing. Skilled in developing
+    physics-based simulation workflows for WAAM, crashworthiness, and gear systems.
+    Experienced in bridging academic research and industrial R&D through
+    high-fidelity modeling and automation."
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Cranfield University
+        area: Manufacturing
+        degree: M.Res.
+        start_date: "2023-01-30"
+        end_date: "2024-05-01"
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+          - "_**Thesis:**_ Understanding and Improving the Inherent Strain Method for Mechanical Analysis of Wire Arc Additive Manufacturing."
+          - "_**Key**_ Topics: Residual stress prediction, distortion modeling, process-structure-property relations."
+          - "_**Supervisors:**_ Dr. Yongle Sun & Dr. Pradeeptta Taraphdar"
+          - "_**Funding:**_ NEWAM (EPSRC Programme Grant)"
+      - institution: Birla Institute of Technology and Science Pilani
+        area: Mechanical Engineering
+        degree: BE
+        start_date: "2017-08-02"
+        end_date: "2021-07-11"
         highlights:
-          - Description 1.
-          - Description 2.
-
+          - "_**Grade:**_ 7.71 / 10"
+          - "_**Class:**_ First Class (Equivalent to UK 2:1)"
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Cranfield University
+        position: Research Assistant
+        location: Cranfield, UK
+        start_date: "2024-06-03"
+        end_date: present
         highlights:
-          - Relativity
-          - Description 2.
-
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+          - Built Python/C++ simulation automation pipelines for thermal-mechanical modelling and process-window analysis.
+          - Developed phase-transformation strain models using test-driven statistical fitting and thermal-expansion datasets.
+          - Integrated laser-scan data with simulation workflows for geometric conformity assessment and deviation-driven modelling.
+          - Implemented rapid reduced-order approaches producing industry-usable simulation results in minutes.
+          - Developed FORTRAN heat-source models and C++ Abaqus subroutines for nonstandard material and process cases.
+          - Delivered technical reports, experimental analyses, and multi-stakeholder design reviews.
+      - company: Sona Comstar
+        position: Graduate Engineering Trainee
+        location: Gurugram, IN
+        start_date: "2021-07-12"
+        end_date: "2022-07-11"
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+          - Performed fatigue, structural and tolerance assessments for drivetrain and differential systems.
+          - "Conducted forging DfM and manufacturing reviews for machining (soft / hard machining), broaching, grinding, polishing, and casting."
+          - Defined operational load cases from torque maps and test data.
+          - "Automated CAD-FEA pipelines using Python/VBA to improve turnaround time."
+          - Delivered stress reports, DFMEA documentation and supplier handover packages.
+      - company: Mercedes-Benz R&D India
+        position: "Student Trainee - Crash Structures"
+        location: Bengaluru, IN
+        start_date: "2021-02-01"
+        end_date: "2021-06-30"
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
+          - Built LS-Dyna models for tyre, rim and composite crash scenarios.
+          - Worked on Lagrangian contact optimisation for fibre-reinforced rubber composites.
+          - Automated ANSA meshing using Python scripts.
+          - "Supported test-simulation correlation for modal and impact behaviour."
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "Study of Residual Stress Using Phased Array Ultrasonics in Ti-6Al-4V Wire-Arc Additively Manufactured Components"
+        authors: [Sundar Gurumurthy]
+        date: "2024-10-01"
+        url: https://www.mdpi.com/1424-8220/24/19/6372
+      - title: Development and Testing of an Antenna Deployment System for Nanosatellite Applications
+        authors: [Sundar Gurumurthy]
+        date: "2019-10-19"
+        url: https://www.scopus.com/record/display.uri?eid=2-s2.0-85079192397
+      - title: Dynamic Active Thermal Control of a LEO Nanosatellite Based on Its Mode of Operation
+        authors: [Sundar Gurumurthy]
+        date: "2019-08-02"
+        url: https://www.base-search.net/Record/76e571816a3d2618dc41f6e5e604bda26a57061e95e9fb6b8cac6a70f943912f
+    Technologies:
+      - label: Simulation & Modelling
+        icon: "fa-solid fa-atom"
+        details: Physics-based modelling, Parameterisable first-principles modelling, Data-driven surrogate models, Multi-objective optimisation, Process-window analysis
+      - label: Data Science
+        icon: "fa-solid fa-chart-pie"
+        details: Scikit-learn, PyTorch3D, Pandas, Polars, Uncertainity quantification
+      - label: Programming Languages
+        icon: "fa-solid fa-hashtag"
+        details: Python, C++, Rust, FORTRAN, BASH, MATLAB
+      - label: FEA Solvers
+        icon: "fa-solid fa-gears"
+        details: ABAQUS, NASTRAN, LS-DYNA, ANSYS, COMSOL
+      - label: CAD Tools
+        icon: "fa-solid fa-ruler"
+        details: NX/Unigraphics, CATIA V5, SolidEdge, Fusion 360
+      - label: Experimental Methods
+        icon: "fa-solid fa-microscope"
+        details: X-Ray Diffraction, Electron Backscatter Diffraction, Laser Scanning, Thermal Imaging
+    Awards:
+      - title: Student Travel Award
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+          - "Utah State University"
+        date: 2019-08-01
+        awarder: Utah State University
+    Volunteer:
+      - company: NSS BITS Pilani
+        position: Volunteer
+        location: Pilani, India
+        start_date: "2018-01-01"
+        end_date: "2018-12-31"
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+          - Tutored underprivileged teenagers enrolled under India's Right to Education Act
+          - Assisted in fundraising and donation drives for student scholarships
