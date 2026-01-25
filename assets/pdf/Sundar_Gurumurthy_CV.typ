@@ -73,114 +73,105 @@
 ]
 
 = Professional Summary
-Simulation engineer specialising in *Python/C++ development,
-  FEA, physics-based modelling, data-driven simulation,* and *statistical
-  analysis* for complex manufacturing and structural processes.
-Experience includes *process modelling, multi-objective
-  optimisation, DOE, MVEE analysis,* and integration of *laser-scan
-  data* with simulation workflows. Proficient in *scikit-learn,
-  PyTorch3D, pandas, polars,* and custom simulation tooling.
-Practical hands-on experience in *WAAM
-  robots, CNC-based scanning operations,* and experimental design.
-Motivated to apply scientific computing and analytical modelling
-to *autonomous manufacturing, process optimisation,* and
-*physics-based digital workflows*.
+Simulation engineer specialising in *first-principles, physics-based modelling* and *scientific software development* for complex manufacturing and mechanical systems. Experienced in deriving and implementing *thermal, mechanical, and phase-transformation models governed by PDEs*, and translating them into *robust, reduced-order simulation tools* for engineering decision-making. Strong background in *Python/C++ development, numerical methods, multi-objective optimisation,* and *statistical analysis*, with hands-on experience bridging *theory, experiments, and production-grade software*.
 
+= Core Competencies
+#grid(
+  columns: 2,
+  gutter: 0.9cm,
+  [
+    *Simulation & Modelling*
+    - Physics-based modelling (thermal, mechanical, non-linear, contact)
+    - PDE-based modelling; sparse numerical solvers (SuiteSparse); Monte Carlo methods
+    - Governing equations and first-principles model formulation
+    - Reduced-order and surrogate modelling
+  ],
+  [
+    *Programming & Data Science*
+    - Numerical optimisation, inverse problems, regression, uncertainty analysis
+    - Structured scientific data pipelines
+    - Automating decision-making through physics- and data-driven models.
+  ],
+)
 = Technical Skills
 #grid(
   columns: 2,
   gutter: 0.9cm,
-
   [
-    *Simulation & Modelling*
-    - Physics-based modelling (thermal-mechanical, nonlinear, contact)
-    - Parameterisable first-principles modelling
-    - Data-driven surrogate models
-    - FEA: Abaqus, LS-Dyna, ANSA (automation)
-    - Multi-objective optimisation (parameter sweeps, process windows)
-
-    *Programming & Data Science*
-    - Python (automation, modelling, ML/statistics)
-    - C++, Bash/Linux, Rust
-    - Scikit-learn, PyTorch3D, Pandas, Polars
-    - DOE, MVEE, regression, correlation, uncertainty analysis
-    - Data pipelines, structured scientific datasets
+    *Languages and Frameworks*
+    - *Languages*: Python, C++, Bash/Linux, Rust, Fortran
+    - *Data Science/ML*: Scikit-learn, PyTorch3D, Pandas, Polars
+    - *Visualisation*: Plotly, Matplotlib, Seaborn, PyVista, VisPy, GNUplot
   ],
-
   [
-    *Manufacturing & Automation*
-    - WAAM: process modelling, bead geometry analysis, distortion prediction
-    - 6-axis robot programming, CNC laser scanning automation
-    - DfM/DfAM for forging, machining (soft → hard), broaching, grinding, polishing, casting reviews
-
-    *Tools & Infrastructure*
-    - Plotly, Matplotlib, Seaborn, PyVista, VisPy, GNUplot for scientific visualisation
-    - Siemens NX, CATIA V5, Teamcenter
-    - GitLab CI/CD, PBS scheduler
-    - HDF5, basic MariaDB/SQL , structured data formats
+    *Other Tools*
+    - *DevOps*: GitLab CI/CD, GitHub Actions, Docker, Apptainer, PBS (HPC
+      Scheduler)
+    - *Databases*: MariaDB, HDF5
+    - *Version Control*: Git, UV, Poetry, cargo (Rust)
+    - *CAD/PLM*: Siemens NX, CATIA V5, Teamcenter
+    - *FEA Solvers*: Abaqus, LS-Dyna, Ansys, Nastran
   ],
 )
 
 = Projects & Applied Modelling
-== Geometry–Linked Manufacturing Acceptance Criteria for Stress Performance \
+== Geometry–Linked Manufacturing Acceptance Criteria for Stress Performance
 *Cranfield University* #h(1fr) 2025 – Present
-- Developed *geometry-based acceptance limits* linking surface profile metrics to tensile and distortion behaviour.
-- Integrated *simulation, laser scanning,* and *tensile testing* into lightweight validation workflows.
-- Reduced dependency on full physics simulations by building a *fast, data-driven criteria framework*.
+- Developed *geometry-based acceptance limits* linking surface profile metrics to tensile response and distortion behaviour.
+- Integrated *physics-based simulation, laser scanning,* and *mechanical testing* into lightweight validation workflows.
+- Replaced repeated high-fidelity simulations with a *fast, model-informed decision framework*.
 
-== Python Library for WAAM & Scan-Based Qualification \
+== Python Library for WAAM & Scan-Based Qualification
 *Cranfield University* #h(1fr) 2025 – Present
-- Built tools for *laser-scan processing, MVEE analysis, deviation
-    mapping,* and geometric feature extraction using ML and
-  conventional methods.
-- Automated entire process from *scan acquisition → data
-    processing → statistical analysis → reporting*.
-- Implemented *interactive 2D/3D dashboards* (Plotly) for manufacturing engineering reviews.
-- Used by project partners for *process qualification, defect assessment,* and *data-driven manufacturability decisions*.
+- Designed a modular Python package for *laser-scan processing, geometric feature extraction,* and *statistical evaluation*.
+- Implemented *MVEE-based process window estimation* and deviation mapping for qualification workflows.
+- Automated end-to-end pipelines from *scan acquisition → analysis → reporting*.
+- Delivered *interactive 2D/3D dashboards* used by industrial partners for process qualification decisions.
 
 \
-== Process-Driven WAAM Simulation & Optimisation \
+== Process-Driven WAAM Simulation & Optimisation
 *Cranfield University* #h(1fr) 2024 – Present
-- Applied *thermal/mechanical modelling* to identify optimal deposition parameters.
-- Designed *DOE-based sensitivity studies* to analyse process–response behaviour.
-- Provided modelling guidance for aerospace and energy components.
+- Built *thermal–mechanical simulation models* to study process sensitivities and parameter interactions.
+- Designed *DOE-based studies* to quantify process–response relationships.
+- Provided modelling insight for aerospace and energy components under development.
 
 = Work Experience
-== Research Assistant \
+== Research Assistant
 *Cranfield University, UK* #h(1fr) Jun 2024 – Present
-- Built *Python/C++ simulation automation pipelines* for thermal-mechanical modelling and process-window analysis.
-- Developed *phase-transformation strain models* using test-driven statistical fitting and thermal-expansion datasets.
-- Integrated *laser-scan data* with simulation workflows for geometric conformity assessment and deviation-driven modelling.
-- Implemented *rapid reduced-order approaches* producing industry-usable simulation results in minutes.
-- Developed *FORTRAN heat-source models* and *C++ Abaqus subroutines* for nonstandard material/process cases.
-- Delivered *technical reports, experimental analyses,* and multi-stakeholder design reviews.
+- Developed *Python/C++ simulation automation pipelines* for thermal–mechanical analysis and sensitivity studies.
+- Formulated *phase-transformation strain models* using test-driven fitting and thermal expansion datasets.
+- Integrated *laser-scan geometry* into simulation workflows for deviation-driven modelling.
+- Implemented *rapid reduced-order approaches* delivering engineering results in minutes.
+- Developed *FORTRAN heat-source models* and *C++ Abaqus subroutines* for non-standard physics.
+- Communicated results via *technical reports, validation studies,* and multidisciplinary reviews.
 
-== Graduate Engineering Trainee \
+== Graduate Engineering Trainee
 *Sona Comstar, India* #h(1fr) Jul 2021 – Jul 2022
-- Performed *fatigue, structural and tolerance assessments* for drivetrain and differential systems.
-- Conducted *forging DfM,* and manufacturing reviews for *machining (soft → hard machining), broaching, grinding, polishing,* and *casting*.
-- Defined *operational load cases* from torque maps and test data.
-- Automated *CAD→FEA pipelines* using Python/VBA, improving turnaround.
-- Delivered *stress reports, DFMEA documentation* and supplier handover packages.
+- Developed *custom simulation software* for mechanical contact analysis of complex gear geometries.
+- Implemented *continuum-mechanics–based contact and deformation models*, solving governing equations for elastic material response under load.
+- Modelled *load-dependent surface contact, stress distribution, and transmission behaviour* using discretised contact formulations.
+- Integrated analysis workflows with *Siemens NX* for parametric geometry generation and *Teamcenter* for versioned data management.
 
-== Student Trainee – Crash Structures \
+== Student Trainee – Crash Structures
 *Mercedes-Benz R&D India* #h(1fr) Feb 2021 – Jun 2021
-- Built *LS-Dyna models* for tyre, rim and composite crash scenarios.
-- Worked on *Lagrangian contact optimisation* for fibre-reinforced rubber composites.
-- Automated *ANSA meshing* using Python scripts.
-- Supported *test–simulation correlation* for modal/impact behaviour.
+- Built *LS-Dyna models* for tyre, rim, and composite crash scenarios.
+- Optimised *Lagrangian contact formulations* for fibre-reinforced rubber composites.
+- Automated *ANSA meshing workflows* using Python.
+- Supported *test–simulation correlation* for impact and modal behaviour.
 
 = Education
-== MSc by Research, Manufacturing \
+== MSc by Research, Manufacturing
 *Cranfield University* #h(1fr) Jan 2023 – Oct 2024 \
 *Thesis: Improving the Inherent Strain Method for WAAM Simulation*
-- Reduced distortion error *14% → 3%* via algorithmic optimisation.
-- Developed *fast inherent-strain simulation* reducing runtime from days to minutes.
+- Reduced distortion prediction error *14% → 3%* through algorithmic model improvements.
+- Developed *fast inherent-strain workflows* reducing simulation runtime from days to minutes.
 
-== B.E. Mechanical Engineering \
+== B.E. Mechanical Engineering
 *BITS Pilani* #h(1fr) Aug 2017 – Jun 2021
 - CGPA: 7.71/10 (First Class)
 
 = Awards
 - AIAA/USU SmallSat Travel Award (Blue Origin Sponsored)
 
+= References
+Available on request.
