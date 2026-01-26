@@ -21,6 +21,7 @@ cv:
     Education:
       - institution: Cranfield University
         area: Manufacturing
+        location: Cranfield, UK
         degree: M.Res.
         start_date: "2023-01-30"
         end_date: "2024-05-01"
@@ -31,6 +32,7 @@ cv:
           - "_**Funding:**_ NEWAM (EPSRC Programme Grant)"
       - institution: Birla Institute of Technology and Science Pilani
         area: Mechanical Engineering
+        location: Pilani, India
         degree: BE
         start_date: "2017-08-02"
         end_date: "2021-07-11"
