@@ -79,9 +79,6 @@ $dark-card: #313244;
 // Font awesome location
 $fa-font-path: "../webfonts";
 
-// Tabler icons location
-$ti-font-path: "../fonts";
-
 // Back To Top button config
 $back-to-top-z-index: 10;
 $back-to-top-bottom: 30px;
@@ -160,3 +157,6 @@ $back-to-top-width: $back-to-top-diameter;
   --ctp-mocha-red: #f38ba8;
   --ctp-mocha-accent: #cba6f7; // mauve
 }
+
+// Max width default
+$max-content-width: 930px !default;
