@@ -85,13 +85,15 @@ rectangles, so the triangles are drawn using scatter traces as suggested in
 with the hex representation of the 4 colours on my wall, taken from the website
 of the paint manufacturer.
 
-<details class="custom-details">
+<details markdown="1" class="custom-details">
 <summary class="custom-summary"><b>Simple Delaunay Triangulation
 Implementation</b></summary>
-{% highlight python linenos %}
+
+```python
 import numpy as np
 from scipy.spatial import Delaunay
 import plotly.graph_objects as go
+
 
 def main():
 
@@ -116,14 +118,16 @@ def main():
         x = np.append(x, x[0])
         y = np.append(y, y[0])
 
-        fig.add_trace(go.Scatter(
-            x=x,
-            y=y,
-            fill="toself",
-            mode="lines",
-            line=dict(color="white", width=6),
-            fillcolor=np.random.choice(palette)
-        ))
+        fig.add_trace(
+            go.Scatter(
+                x=x,
+                y=y,
+                fill="toself",
+                mode="lines",
+                line=dict(color="white", width=6),
+                fillcolor=np.random.choice(palette),
+            )
+        )
 
     fig.update_layout(
         showlegend=False,
@@ -131,7 +135,7 @@ def main():
         yaxis=dict(visible=False),
         margin=dict(l=0, r=0, t=0, b=0),
         plot_bgcolor="white",
-        paper_bgcolor="white"
+        paper_bgcolor="white",
     )
     _ = fig.update_xaxes(range=[0, 1])
     _ = fig.update_yaxes(range=[0, 1])
@@ -139,9 +143,10 @@ def main():
     fig.write_image("triangulation.svg")
     fig.write_image("triangulation.png")
 
-if **name** == "**main**":
-main()
-{% endhighlight %}
+
+if __name__ == "__main__":
+    main()
+```
 
 </details>
 
@@ -170,8 +175,8 @@ a clean edge.
 
 ```python
 # For example, change the image domain to:
-_ = fig.update_xaxes(range=[0.33,0.66])
-_ = fig.update_yaxes(range=[0.33,0.66])
+_ = fig.update_xaxes(range=[0.33, 0.66])
+_ = fig.update_yaxes(range=[0.33, 0.66])
 ```
 
 ---
@@ -203,32 +208,33 @@ marked as neighbours, else the edge is just added to the map for future
 comparisons. Once the adjacency matrix is created, we can just ensure that a
 triangle is never allotted the same colour as its adjacent triangles.
 
-<details class="custom-details">
+<details markdown="1" class="custom-details">
 <summary><b>Anti-Clumping Implementation</b></summary>
 <br>
-{% highlight python %}
+
+```py
 palette = ["#fece8b", "#b49370", "#95CC84", "#f7b4c3"]
 triangle_colours = [None] * len(tri.simplices)
 adj = [[] for _ in tri.simplices]
 edges = {}
 
 for i, s in enumerate(tri.simplices):
-for a, b in [(s[0], s[1]), (s[1], s[2]), (s[2], s[0])]:
-key = tuple(sorted((a, b)))
-if key in edges:
-j = edges[key]
-adj[i].append(j)
-adj[j].append(i)
-else:
-edges[key] = i
+    for a, b in [(s[0], s[1]), (s[1], s[2]), (s[2], s[0])]:
+        key = tuple(sorted((a, b)))
+        if key in edges:
+            j = edges[key]
+            adj[i].append(j)
+            adj[j].append(i)
+        else:
+            edges[key] = i
 
 # Assign colours with anti-clumping
 
 for i in range(len(tri.simplices)):
-neighbors = adj[i]
-disallowed = {
-triangle_colours[n] for n in neighbors if triangle_colours[n] is not None
-}
+    neighbors = adj[i]
+    disallowed = {
+        triangle_colours[n] for n in neighbors if triangle_colours[n] is not None
+    }
 
     # Retry random colours until one fits
     for _ in range(10):
@@ -239,8 +245,7 @@ triangle_colours[n] for n in neighbors if triangle_colours[n] is not None
     else:
         # fallback
         triangle_colours[i] = np.random.choice(palette)
-
-{% endhighlight %}
+```
 
 As a good practice, this algorithm has a fallback but with a 4 colour palette,
 this should never happen as a triangle can only have 3 neighbours.
@@ -278,14 +283,14 @@ doesn't work with recent versions of `numpy`. Hence, I ended up creating a very
 [simple implementation of the algorithm
 myself](https://github.com/neuroconvergent/py-art/blob/5c23018444db525c7bc1921506d4194ddbfa1e8b/main.py#L20).
 
-<details class="custom-details">
+<details markdown="1" class="custom-details">
 <summary><b>Poisson-Disc Sampling Implementation</b></summary>
 <br>
-{% highlight python %}
 
+```python
 def poisson_disc_samples(width, height, r, k=30):
-"""
-Bridson's Poisson-disc sampling algorithm.
+    """
+    Bridson's Poisson-disc sampling algorithm.
 
     width, height : sampling area
     r             : minimum distance between samples
@@ -351,8 +356,7 @@ Bridson's Poisson-disc sampling algorithm.
             active.remove(idx)
 
     return np.array(samples)
-
-{% endhighlight %}
+```
 
 </details>
 
