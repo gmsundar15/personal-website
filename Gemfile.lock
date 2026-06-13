@@ -120,6 +120,7 @@ GEM
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
+    erb (6.0.4)
     eventmachine (1.2.7)
     execjs (2.10.1)
     fast-stemmer (1.0.2)
@@ -363,6 +364,7 @@ DEPENDENCIES
   al_search (= 1.0.2)
   classifier-reborn
   css_parser
+  erb
   jekyll
   jekyll-3rd-party-libraries
   jekyll-archives-v2
@@ -426,6 +428,7 @@ CHECKSUMS
   deep_merge (1.2.2) sha256=83ced3a3d7f95f67de958d2ce41b1874e83c8d94fe2ddbff50c8b4b82323563a
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   em-websocket (0.5.3) sha256=f56a92bde4e6cb879256d58ee31f124181f68f8887bd14d53d5d9a292758c6a8
+  erb (6.0.4) sha256=38e3803694be357fe2bfe312487c74beaf9fb4e5beb3e22498952fe1645b95d9
   eventmachine (1.2.7) sha256=994016e42aa041477ba9cff45cbe50de2047f25dd418eba003e84f0d16560972
   execjs (2.10.1) sha256=abe0ae028467eb8e30c10814eb934d07876a691aae7e803d813b7ce5a75e73f1
   fast-stemmer (1.0.2) sha256=d0aa9fd9cfbca836a09d8abb122552ac8234130271a3b0da1cb077323d650819

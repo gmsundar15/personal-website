@@ -31,6 +31,7 @@ end
 # Gems for development or external data fetching (outside :jekyll_plugins)
 group :other_plugins do
     gem 'css_parser'
+    gem 'erb'            # required by Jekyll on Ruby versions where erb is no longer bundled
     gem 'observer'       # used by jekyll-scholar
     gem 'ostruct'        # used by jekyll-twitter-plugin
     # gem 'terser'         # used by jekyll-terser
