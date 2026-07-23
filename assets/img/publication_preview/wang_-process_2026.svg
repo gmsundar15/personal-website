@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Interlayer rolling of a WAAM wall</title>
+  <desc id="desc">A flat engineering schematic of a roller traversing a meshed wire-arc additively manufactured wall.</desc>
+
+  <defs>
+    <clipPath id="wallFaceClip">
+      <path d="M220 395L1000 295V505L220 605Z"/>
+    </clipPath>
+    <clipPath id="wallTopClip">
+      <path d="M180 380L960 280L1000 295L220 395Z"/>
+    </clipPath>
+    <clipPath id="substrateTopClip">
+      <path d="M80 600L980 485L1100 530L200 645Z"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .carriage,
+    .contact-patch {
+      animation: traverse 7s ease-in-out infinite;
+    }
+    .roller {
+      animation: rotate-roller 7s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 290px 287px;
+    }
+    .load-arrow {
+      animation: load-pulse 1.2s ease-in-out infinite;
+    }
+    .direction-arrow {
+      animation: direction-pulse 2s ease-in-out infinite;
+    }
+    @keyframes traverse {
+      0%, 8% { transform: translate(0, 0); }
+      46%, 54% { transform: translate(550px, -70.5px); }
+      92%, 100% { transform: translate(0, 0); }
+    }
+    @keyframes rotate-roller {
+      0%, 8% { transform: rotate(0deg); }
+      46%, 54% { transform: rotate(720deg); }
+      92%, 100% { transform: rotate(0deg); }
+    }
+    @keyframes load-pulse {
+      0%, 100% { transform: translateY(-4px); }
+      50% { transform: translateY(5px); }
+    }
+    @keyframes direction-pulse {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .carriage,
+      .contact-patch,
+      .roller,
+      .load-arrow,
+      .direction-arrow {
+        animation: none;
+      }
+    }
+  </style>
+
+  <!-- Neutral drawing field -->
+  <rect width="1200" height="800" fill="#f7f8fa"/>
+  <path d="M48 48H1152V752H48Z" fill="none" stroke="#d6dadd" stroke-width="2"/>
+  <g fill="none" stroke="#e5e8ea" stroke-width="1">
+    <path d="M48 136H1152M48 224H1152M48 312H1152M48 400H1152M48 488H1152M48 576H1152M48 664H1152"/>
+    <path d="M136 48V752M224 48V752M312 48V752M400 48V752M488 48V752M576 48V752M664 48V752M752 48V752M840 48V752M928 48V752M1016 48V752"/>
+  </g>
+
+  <!-- Substrate in a consistent oblique projection -->
+  <path d="M80 600L980 485L1100 530L200 645Z" fill="#d8dde1" stroke="#7c858c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M200 645L1100 530V585L200 700Z" fill="#b8c0c6" stroke="#7c858c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M80 600L200 645V700L80 655Z" fill="#c7cdd2" stroke="#7c858c" stroke-width="3" stroke-linejoin="round"/>
+  <g clip-path="url(#substrateTopClip)" fill="none" stroke="#9aa2a8" stroke-width="1.5">
+    <path d="M120 615L1020 500M160 630L1060 515"/>
+    <path d="M170 588.5L290 633.5M350 565.5L470 610.5M530 542.5L650 587.5M710 519.5L830 564.5M890 496.5L1010 541.5"/>
+  </g>
+
+  <!-- WAAM wall: flat finite-element colors and mesh -->
+  <path d="M220 395L1000 295V505L220 605Z" fill="#073bc6" stroke="#101c54" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M180 380L220 395V605L180 590Z" fill="#062d9c" stroke="#101c54" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M180 380L960 280L1000 295L220 395Z" fill="#1855ea" stroke="#101c54" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Deposited layers on the wall face -->
+  <g clip-path="url(#wallFaceClip)" fill="none" stroke="#111b66" stroke-width="2" opacity="0.82">
+    <path d="M220 415L1000 315M220 435L1000 335M220 455L1000 355M220 475L1000 375M220 495L1000 395M220 515L1000 415M220 535L1000 435M220 555L1000 455M220 575L1000 475M220 595L1000 495"/>
+    <path d="M270 388.6V598.6M320 382.2V592.2M370 375.8V585.8M420 369.4V579.4M470 362.9V572.9M520 356.5V566.5M570 350.1V560.1M620 343.7V553.7M670 337.3V547.3M720 330.9V540.9M770 324.5V534.5M820 318.1V528.1M870 311.7V521.7M920 305.3V515.3M970 298.8V508.8"/>
+  </g>
+
+  <!-- Closed left end face -->
+  <g fill="none" stroke="#101c66" stroke-width="2" opacity="0.82">
+    <path d="M180 400L220 415M180 420L220 435M180 440L220 455M180 460L220 475M180 480L220 495M180 500L220 515M180 520L220 535M180 540L220 555M180 560L220 575M180 580L220 595"/>
+    <path d="M200 387.5V597.5"/>
+  </g>
+
+  <!-- Mesh on the top rolling surface -->
+  <g clip-path="url(#wallTopClip)" fill="none" stroke="#101c66" stroke-width="2" opacity="0.8">
+    <path d="M193.3 385L973.3 285M206.7 390L986.7 290"/>
+    <path d="M219 375L259 390M277.5 367.5L317.5 382.5M336 360L376 375M394.5 352.5L434.5 367.5M453 345L493 360M511.5 337.5L551.5 352.5M570 330L610 345M628.5 322.5L668.5 337.5M687 315L727 330M745.5 307.5L785.5 322.5M804 300L844 315M862.5 292.5L902.5 307.5M921 285L961 300"/>
+  </g>
+
+  <!-- Rolling direction and moving contact zone -->
+  <g class="direction-arrow" fill="#e51b23">
+    <path d="M390 363.1L752.2 316.7" fill="none" stroke="#e51b23" stroke-width="8"/>
+    <path d="M751.1 307.7L780 313.1L753.4 325.6Z"/>
+  </g>
+  <g class="contact-patch">
+    <path d="M265 369L335 360L375 375L305 384Z" fill="#e51b23" stroke="#9f1118" stroke-width="2"/>
+  </g>
+
+  <!-- Roller and applied load -->
+  <g class="carriage">
+    <g class="load-arrow">
+      <path d="M290 51V134" fill="none" stroke="#2673be" stroke-width="12"/>
+      <path d="M277 134H303L290 159Z" fill="#2673be"/>
+    </g>
+    <path d="M238 97L257 219M342 97L323 219" fill="none" stroke="#737a80" stroke-width="20" stroke-linecap="round"/>
+    <path d="M238 97H342" fill="none" stroke="#737a80" stroke-width="20" stroke-linecap="round"/>
+    <path d="M260 214L272 234M320 214L308 234" fill="none" stroke="#737a80" stroke-width="16" stroke-linecap="round"/>
+    <g class="roller">
+      <circle cx="290" cy="287" r="78" fill="#d5d8da" stroke="#666d72" stroke-width="9"/>
+      <circle cx="290" cy="287" r="59" fill="#f5f6f7" stroke="#858b90" stroke-width="5"/>
+      <g fill="none" stroke="#8d9397" stroke-width="5">
+        <path d="M290 233V341M236 287H344M252 249L328 325M328 249L252 325"/>
+      </g>
+      <circle cx="290" cy="287" r="18" fill="#747b80" stroke="#f5f6f7" stroke-width="6"/>
+    </g>
+  </g>
+
+</svg>
